@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50716
 File Encoding         : 65001
 
-Date: 2016-12-31 17:00:17
+Date: 2017-01-02 22:12:55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,22 +21,19 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `lokasi`;
 CREATE TABLE `lokasi` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(60) NOT NULL,
   `address` varchar(80) NOT NULL,
   `lat` float(10,6) NOT NULL,
   `lng` float(10,6) NOT NULL,
   `type` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of lokasi
 -- ----------------------------
-INSERT INTO `lokasi` VALUES ('1', 'Love.Fish', '580 Darling Street, Rozelle, NSW', '-33.861034', '151.171936', 'stop');
-INSERT INTO `lokasi` VALUES ('2', 'Young Henrys', '76 Wilford Street, Newtown, NSW', '-33.898113', '151.174469', 'break');
-INSERT INTO `lokasi` VALUES ('3', 'Hunter Gatherer', 'Greenwood Plaza, 36 Blue St, North Sydney NSW', '-33.840282', '151.207474', 'break');
-INSERT INTO `lokasi` VALUES ('4', 'The Potting Shed', '7A, 2 Huntley Street, Alexandria, NSW', '-33.910751', '151.194168', 'break');
-INSERT INTO `lokasi` VALUES ('5', 'Nomad', '16 Foster Street, Surry Hills, NSW', '-33.879917', '151.210449', 'break');
-INSERT INTO `lokasi` VALUES ('6', 'Three Blue Ducks', '43 Macpherson Street, Bronte, NSW', '-33.906357', '151.263763', 'stop');
-INSERT INTO `lokasi` VALUES ('7', 'Single Origin Roasters', '60-64 Reservoir Street, Surry Hills, NSW', '-33.881123', '151.209656', 'stop');
-INSERT INTO `lokasi` VALUES ('8', 'Red Lantern', '60 Riley Street, Darlinghurst, NSW', '-33.874737', '151.215530', 'stop');
+INSERT INTO `lokasi` VALUES ('20', '1 Charles St, Woolloomooloo NSW 2011, Australia', '-33.871841', '151.219254', 'stop');
+INSERT INTO `lokasi` VALUES ('21', '138 Oxford St, Darlinghurst NSW 2010, Australia', '-33.880676', '151.217545', 'stop');
+INSERT INTO `lokasi` VALUES ('22', '38 Nobbs St, Surry Hills NSW 2010, Australia', '-33.889229', '151.216843', 'stop');
+INSERT INTO `lokasi` VALUES ('23', '49 Shepherd St, Chippendale NSW 2008, Australia', '-33.885807', '151.195908', 'stop');
+INSERT INTO `lokasi` VALUES ('24', '156 Forbes St, Darlinghurst NSW 2010, Australia', '-33.879822', '151.217545', 'break');
+INSERT INTO `lokasi` VALUES ('25', '2 S Dowling St, Moore Park NSW 2021, Australia', '-33.902622', '151.214783', 'break');

@@ -21,8 +21,8 @@
           width: 50%;
           margin-left:auto;
           margin-right:auto;
-          margin-top:auto;
-          margin-bottom:auto;
+          margin-top:20px;
+          margin-bottom:20px;
           left:0;
           right:0;
           top:0%;
@@ -46,7 +46,9 @@
           <option value="stop" <?php echo ($_GET['show']=='stop')? 'selected=selected' : ''; ?>>Show Stop</option>
           <option value="break" <?php echo ($_GET['show']=='break')? 'selected=selected' : ''; ?>>Show Break</option>
         </select>
-      
+        
+        <a href="listlocation.php">List Location</a>
+
     </div>
     <div id="map"></div>
 
@@ -60,7 +62,7 @@
         }
       };
 
-        function initMap() {
+      function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: new google.maps.LatLng(-33.863276, 151.207977),
           zoom: 12
@@ -72,7 +74,7 @@
             var xml = data.responseXML;
             var markers = xml.documentElement.getElementsByTagName('marker');
             Array.prototype.forEach.call(markers, function(markerElem) {
-              var name = markerElem.getAttribute('name');
+              
               var address = markerElem.getAttribute('address');
               var type = markerElem.getAttribute('type');
               var point = new google.maps.LatLng(
@@ -102,8 +104,6 @@
           });
         }
 
-
-
       function downloadUrl(url, callback) {
         var request = window.ActiveXObject ?
             new ActiveXObject('Microsoft.XMLHTTP') :
@@ -121,6 +121,7 @@
       }
 
       function doNothing() {}
+      
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzL8vaTCrptLt-kpoh6h0QaFV2VuEPXbE&callback=initMap">

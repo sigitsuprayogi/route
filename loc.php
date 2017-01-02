@@ -1,13 +1,12 @@
 <?php
 
-$dom = new DOMDocument("1.0");
-$node = $dom->createElement("markers");
-$parnode = $dom->appendChild($node);
+include "database.php";
 
-$connection=mysqli_connect("localhost", "root", "toor", "route");
-if (!$connection) {  die('Not connected : ' . mysqli_error());}
+$dom      = new DOMDocument("1.0");
+$node     = $dom->createElement("markers");
+$parnode  = $dom->appendChild($node);
 
-$show = '';
+$show     = '';
 
 if ( $_GET['show'] == TRUE ) :
 
@@ -19,7 +18,7 @@ if ( $_GET['show'] == TRUE ) :
 
 endif;
 
-$query = "SELECT * FROM lokasi where id=id ".$show;
+$query  = "SELECT * FROM lokasi where id=id ".$show;
 
 $result = $connection->query($query);
 if (!$result) {
@@ -32,7 +31,6 @@ while ($row = @mysqli_fetch_assoc($result)){
 
   $node = $dom->createElement("marker");
   $newnode = $parnode->appendChild($node);
-  $newnode->setAttribute("name",$row['name']);
   $newnode->setAttribute("address", $row['address']);
   $newnode->setAttribute("lat", $row['lat']);
   $newnode->setAttribute("lng", $row['lng']);
