@@ -42,8 +42,8 @@
     <div id="show"> 
       
         <a href="index.php">index</a> - 
-        <a href="listlocation.php">List Location</a>
-        <span style="float: right;">Menu <?php echo $_GET['type'] ?> Location</span>
+        <a href="listvehicle.php">List Vehicle</a>
+        <span style="float: right;">New Position For Vehicle : <?php echo $_GET['name_car'] ?></span>
     </div>
     <div id="map"></div>
     <script>
@@ -66,7 +66,7 @@
         });
         map.panTo(latLng);
 
-        var url = "savelocation.php?type_data=<?php echo $_GET['type']?>&lat=" + latLng.lat() + "&lng=" + latLng.lng();
+        var url = "savelocation.php?id_car=<?php echo $_GET['id_car']?>&lat=" + latLng.lat() + "&lng=" + latLng.lng();
         downloadUrl(url, function(data, responseCode) {
         });
 
